@@ -37,6 +37,7 @@
             {{ $t('general.description') }}
           </oxd-text>
           <p
+            style="padding-inline: 15px"
             class="orangehrm-applicant-card-pre-tag"
             v-html="vacancyDescription"
           ></p>
