@@ -32,17 +32,17 @@
         <img class="oxd-brand-banner" :src="bannerSrc" />
       </div>
       <template v-if="vacancyDescription">
-        <oxd-divider />
-        <oxd-text class="orangehrm-vacancy-description" tag="p">
-          {{ $t('general.description') }}
-        </oxd-text>
         <oxd-text tag="p" :class="descriptionClasses">
-          <pre class="orangehrm-applicant-card-pre-tag"
-            >{{ vacancyDescription }}
-        </pre
-          >
+          <oxd-text class="orangehrm-vacancy-description" tag="h4">
+            {{ $t('general.description') }}
+          </oxd-text>
+          <p
+            class="orangehrm-applicant-card-pre-tag"
+            v-html="vacancyDescription"
+          ></p>
         </oxd-text>
-        <div
+        <!-- NOTE: This field is not needed for our usecase
+          <div
           v-if="vacancyDescription.length > descriptionLength"
           class="orangehrm-vacancy-card-footer"
         >
@@ -55,7 +55,7 @@
               isViewDetails ? $t('general.show_less') : $t('general.show_more')
             }}
           </oxd-text>
-        </div>
+        </div> -->
       </template>
       <oxd-divider />
       <oxd-form
@@ -108,7 +108,7 @@
           </oxd-form-row>
           <oxd-form-row>
             <oxd-grid :cols="3" class="orangehrm-full-width-grid">
-              <oxd-grid-item>
+              <oxd-grid-item style="grid-column: 1 / 4">
                 <oxd-input-field
                   v-model="applicant.resume"
                   name="resume"
@@ -124,7 +124,8 @@
               </oxd-grid-item>
             </oxd-grid>
           </oxd-form-row>
-          <oxd-form-row>
+          <!-- NOTE: This field is not needed for our usecase
+             <oxd-form-row>
             <oxd-grid :cols="3" class="orangehrm-full-width-grid">
               <oxd-grid-item class="orangehrm-applicant-container-colspan-2">
                 <oxd-input-field
@@ -137,11 +138,14 @@
                   :rules="rules.keywords"
                 />
               </oxd-grid-item>
-            </oxd-grid>
-          </oxd-form-row>
+            </oxd-grid> 
+          </oxd-form-row>-->
           <oxd-form-row>
             <oxd-grid :cols="3" class="orangehrm-full-width-grid">
-              <oxd-grid-item class="orangehrm-applicant-container-colspan-2">
+              <oxd-grid-item
+                style="grid-column: 1 / 4"
+                class="orangehrm-applicant-container-colspan-2"
+              >
                 <oxd-input-field
                   v-model="applicant.comment"
                   name="comment"
@@ -336,7 +340,7 @@ export default {
       this.$refs.applicantForm.$el.submit();
     },
     onCancel() {
-      navigate('/recruitmentApply/jobs.html');
+      window.location.href = 'https://intradatech.com/careers/';
     },
     showDialogue() {
       this.$refs.showDialogueModal.showSuccessDialog().then((confirmation) => {
