@@ -29,7 +29,7 @@
             })
           }}
         </oxd-text>
-        <img class="oxd-brand-banner" src="https://intradatech.com" />
+        <img class="oxd-brand-banner" :src="bannerSrc" />
       </div>
       <template v-if="vacancyDescription">
         <oxd-text tag="p" :class="descriptionClasses">
@@ -189,17 +189,7 @@
       </oxd-form>
     </div>
   </div>
-  <div class="orangehrm-paper-container">
-    <oxd-text tag="p" class="orangehrm-vacancy-list-poweredby">
-      {{ $t('recruitment.powered_by') }}
-    </oxd-text>
-    <img
-      :src="defaultPic"
-      alt="OrangeHRM Picture"
-      class="orangehrm-container-img"
-    />
-    <slot name="footer"></slot>
-  </div>
+
   <success-dialogue ref="showDialogueModal"></success-dialogue>
 </template>
 
@@ -256,6 +246,10 @@ export default {
     success: {
       type: Boolean,
       default: false,
+    },
+    bannerSrc: {
+      type: String,
+      required: true,
     },
     token: {
       type: String,
