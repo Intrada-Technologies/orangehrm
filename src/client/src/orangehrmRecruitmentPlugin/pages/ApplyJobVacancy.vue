@@ -29,7 +29,7 @@
             })
           }}
         </oxd-text>
-        <img class="oxd-brand-banner" :src="bannerSrc" />
+        <img class="oxd-brand-banner" src="https://intradatech.com" />
       </div>
       <template v-if="vacancyDescription">
         <oxd-text tag="p" :class="descriptionClasses">
@@ -256,10 +256,6 @@ export default {
     success: {
       type: Boolean,
       default: false,
-    },
-    bannerSrc: {
-      type: String,
-      required: true,
     },
     token: {
       type: String,

@@ -53,7 +53,7 @@
             name="username"
             :label="'AD Username'"
             label-icon="person"
-            :placeholder="'AD Username'"
+            :placeholder="'AD Username (not email)'"
             :rules="rules.username"
             autofocus
           />
