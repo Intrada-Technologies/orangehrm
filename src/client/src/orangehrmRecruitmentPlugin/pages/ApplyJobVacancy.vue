@@ -114,13 +114,16 @@
                   v-model="applicant.resume"
                   name="resume"
                   type="file"
+                  :accpets="application / pdf"
                   :label="$t('recruitment.resume')"
                   :button-label="$t('general.browse')"
                   :rules="rules.resume"
                   required
                 />
                 <oxd-text class="orangehrm-input-hint" tag="p">
-                  {{ $t('general.accept_custom_format_file') }}
+                  <!-- TODO: figure out how this is set -->
+                  <!-- {{ $t('general.accept_custom_format_file') }} -->
+                  Accepts .pdf up to 1MB
                 </oxd-text>
               </oxd-grid-item>
             </oxd-grid>

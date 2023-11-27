@@ -51,9 +51,9 @@
           <oxd-input-field
             v-model="username"
             name="username"
-            :label="$t('general.username')"
+            :label="'AD Username'"
             label-icon="person"
-            :placeholder="$t('auth.username')"
+            :placeholder="'AD Username'"
             :rules="rules.username"
             autofocus
           />
@@ -63,9 +63,9 @@
           <oxd-input-field
             v-model="password"
             name="password"
-            :label="$t('general.password')"
+            :label="'AD Password'"
             label-icon="key"
-            :placeholder="$t('auth.password')"
+            :placeholder="'AD Password'"
             type="password"
             :rules="rules.password"
           />
@@ -79,32 +79,10 @@
             type="submit"
           />
         </oxd-form-actions>
-        <div class="orangehrm-login-forgot">
-          <oxd-text class="orangehrm-login-forgot-header" @click="navigateUrl">
-            {{ $t('auth.forgot_password') }}?
-          </oxd-text>
-        </div>
       </oxd-form>
       <br />
     </div>
     <div class="orangehrm-login-footer">
-      <div v-if="showSocialMedia" class="orangehrm-login-footer-sm">
-        <a
-          href="https://www.linkedin.com/company/orangehrm/mycompany/"
-          target="_blank"
-        >
-          <oxd-icon type="svg" class="orangehrm-sm-icon" name="linkedinFill" />
-        </a>
-        <a href="https://www.facebook.com/OrangeHRM/" target="_blank">
-          <oxd-icon type="svg" class="orangehrm-sm-icon" name="facebookFill" />
-        </a>
-        <a href="https://twitter.com/orangehrm?lang=en" target="_blank">
-          <oxd-icon type="svg" class="orangehrm-sm-icon" name="twitterFill" />
-        </a>
-        <a href="https://www.youtube.com/c/OrangeHRMInc" target="_blank">
-          <oxd-icon type="svg" class="orangehrm-sm-icon" name="youtubeFill" />
-        </a>
-      </div>
       <slot name="footer"></slot>
     </div>
   </login-layout>
@@ -119,7 +97,6 @@ import {OxdAlert, OxdIcon, OxdSheet} from '@ohrm/oxd';
 
 export default {
   components: {
-    'oxd-icon': OxdIcon,
     'oxd-alert': OxdAlert,
     'oxd-sheet': OxdSheet,
     'login-layout': LoginLayout,

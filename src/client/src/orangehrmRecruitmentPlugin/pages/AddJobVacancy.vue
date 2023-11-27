@@ -17,6 +17,7 @@
  * Boston, MA  02110-1301, USA
  */
  -->
+
 <template>
   <div class="orangehrm-background-container">
     <div class="orangehrm-card-container">
@@ -44,7 +45,7 @@
           </oxd-grid-item>
         </oxd-grid>
         <oxd-grid :cols="3" class="orangehrm-full-width-grid">
-          <oxd-grid-item class="orangehrm-grid-item-span-2">
+          <oxd-grid-item style="grid-column: 1 / 4">
             <oxd-input-field
               v-model="vacancy.description"
               type="textarea"
@@ -127,6 +128,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import {APIService} from '@/core/util/services/api.service';
 import {navigate} from '@ohrm/core/util/helper/navigation';
 import {
